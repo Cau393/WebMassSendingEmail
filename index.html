@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio Emails CDPI Pharma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Envio Emails CDPI Pharma</h2>
+        
+        <form id="emailForm">
+            <div class="form-group">
+                <label>Senha de Acesso:</label>
+                <input type="password" name="password" required placeholder="Digite a senha de acesso">
+            </div>
+
+            <div class="form-group">
+                <label>Faça o upload da lista de envio (.xlsx / .csv):</label>
+                <input type="file" name="listFile" accept=".xlsx, .csv" required>
+                <small>Colunas detectadas: <b>Nome</b> e <b>E-mail</b></small>
+            </div>
+
+            <div class="form-group">
+                <label>Assunto do Email:</label>
+                <input type="text" name="messageSubject" required placeholder="Assunto do Email">
+            </div>
+
+            <div class="form-group">
+                <label>Message Body:</label>
+                <textarea name="messageBody" required rows="6" placeholder="Olá {name}, ..."></textarea>
+                <small>Tip: Use <b>{name}</b> para inserir o nome do destinatário automaticamente.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Adicione um anexo (Opcional):</label>
+                <input type="file" name="attachmentFile">
+            </div>
+
+            <button type="submit" id="sendBtn">Enviar Emails</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

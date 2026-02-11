@@ -10,7 +10,6 @@ const upload = multer({ storage: storage });
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-app.use(express.static('public'));
 app.use(express.json());
 
 // --- CONFIGURATION ---
@@ -117,10 +116,8 @@ app.post('/api/send', upload.fields([{ name: 'listFile' }, { name: 'attachmentFi
     }
 });
 
-// Vercel Export
-const PORT = process.env.PORT || 3000;
 if (require.main === module) {
-    app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
 
 module.exports = app;
