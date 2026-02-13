@@ -29,7 +29,12 @@
 
             <div class="form-group">
                 <label>Message Body:</label>
-                <textarea name="messageBody" required rows="6" placeholder="Olá {name}, ..."></textarea>
+                <div class="toolbar" style="margin-bottom: 5px;">
+                    <button type="button" id="boldBtn" style="font-weight:bold; cursor:pointer; padding: 5px 10px;">B</button>
+                    <small style="margin-left: 10px;">(Selecione o texto e clique em <b>B</b>)</small>
+                </div>
+            
+                <textarea id="msgBodyInput" name="messageBody" required rows="6" placeholder="Olá {name}, ..."></textarea>
                 <small>Tip: Use <b>{name}</b> para inserir o nome do destinatário automaticamente.</small>
             </div>
 
