@@ -7,8 +7,8 @@ document.getElementById('emailForm').addEventListener('submit', async (e) => {
     const btn = document.getElementById('sendBtn');
 
     btn.disabled = true;
-    btn.textContent = "Processing...";
-    statusDiv.textContent = "Sending emails... (Do not close this tab)";
+    btn.textContent = "Processando...";
+    statusDiv.textContent = "Enviando emails... (Não feche esta aba)";
     statusDiv.style.color = 'blue';
 
     try {
@@ -22,11 +22,11 @@ document.getElementById('emailForm').addEventListener('submit', async (e) => {
         if (response.ok) {
             // Updated to handle both cases just in case
             const count = result.count !== undefined ? result.count : 'many';
-            statusDiv.textContent = `Success! Sent ${count} emails.`;
+            statusDiv.textContent = `Sucesso! Enviados ${count} emails.`;
             statusDiv.style.color = 'green';
             form.reset();
         } else {
-            statusDiv.textContent = `Error: ${result.error}`;
+            statusDiv.textContent = `Erro: ${result.error}`;
             statusDiv.style.color = 'red';
         }
     } catch (err) {
@@ -35,7 +35,7 @@ document.getElementById('emailForm').addEventListener('submit', async (e) => {
         statusDiv.style.color = 'red';
     } finally {
         btn.disabled = false;
-        btn.textContent = "Send Emails";
+        btn.textContent = "Enviar Emails";
     }
 });
 
